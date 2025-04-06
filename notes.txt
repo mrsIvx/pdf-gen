@@ -1,0 +1,22 @@
+1. Field position editing 
+2. Keep field while it has no position 
+3. Possibility to add default field value while creating 
+4. Fonts 
+5. Sign / image with rotate Possibility (position + rotating)
+7. Make default value name and surname for each template
+8. Generated File Naming (Name_Surname_templateName.pdf)
+9. Default field overwriting on index page before generation
+
+
+
+
+
+6. G-Drive
+10. Save couple of different documents 
+
+
+
+11. blur option on generation 
+12. hide field option on generation 
+13. test functional 
+14. deny mobile devices 

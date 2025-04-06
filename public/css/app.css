@@ -1,0 +1,613 @@
+/* public/css/app.css */
+.summary-list {
+    margin: 20px 0;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.summary-label {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.summary-value {
+    color: var(--text-secondary);
+    text-align: right;
+    max-width: 50%;
+    word-wrap: break-word;
+}
+
+/* Modal styles */
+.preview-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--card-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.preview-modal-content {
+    background: var(--card-dark);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    width: 330px;
+    max-width: 90%;
+    margin: 20px auto;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-color);
+}
+
+.delete-confirmation-content {
+    margin-top: 20px;
+}
+
+.template-summary {
+    background: var(--input-background);
+    padding: 16px;
+    border-radius: 8px;
+    margin: 16px 0;
+}
+
+.template-summary h4 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.template-summary ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.template-summary li {
+    margin-bottom: 8px;
+}
+
+.confirmation-input {
+    margin: 20px 0;
+}
+
+.confirmation-input input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--input-background);
+    color: var(--text-primary);
+    margin-top: 8px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.cancel-button,
+.delete-button {
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.cancel-button {
+    background: var(--background-tertiary);
+    color: var(--text-primary);
+}
+
+.delete-button {
+    background: var(--error-color, #dc3545);
+    color: white;
+}
+
+.delete-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.close-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.close-button:hover {
+    background: var(--background-tertiary);
+}
+
+/* Delete Summary Modal Specific Styles */
+.delete-summary-modal {
+    background: var(--card-dark);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    width: 500px;
+    max-width: 90vw;
+    margin: 20px auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.delete-summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.delete-summary-header h3 {
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.delete-summary-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+.delete-summary-button {
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.delete-summary-button.cancel {
+    background: var(--input-background);
+    color: var(--text-primary);
+}
+
+.delete-summary-button.delete {
+    background: var(--error-color, #dc3545);
+    color: white;
+}
+
+.delete-summary-button.delete:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.delete-summary-button:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.delete-summary-input {
+    margin: 20px 0;
+}
+
+.delete-summary-input input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--input-background);
+    color: var(--text-primary);
+    margin-top: 8px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.delete-summary-input input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.2);
+}
+
+/* Visual feedback for input matching */
+.delete-summary-input.match input {
+    border-color: var(--success-color, #28a745);
+    background: var(--input-background);
+}
+
+.delete-summary-input.no-match input {
+    border-color: var(--error-color, #dc3545);
+    background: var(--input-background);
+}
+
+.helper-text {
+    font-size: 12px;
+    color: var(--error-color, #dc3545);
+    margin-top: 4px;
+    padding-left: 4px;
+}
+
+/* Ensure the delete button is visible */
+.delete-summary-button.delete {
+    background: var(--error-color, #dc3545);
+    color: white;
+    min-width: 120px;
+    position: relative;
+    z-index: 1;
+}
+
+.delete-summary-button.delete:not(:disabled):hover {
+    background: var(--error-color-dark, #c82333);
+}
+
+/* Form field container and visibility toggle */
+.field-controls {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+}
+
+.checkbox-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.form-field-container {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: var(--background-tertiary);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.form-field-container.blur-enabled {
+    border-color: var(--primary-color);
+    background: rgba(var(--primary-color-rgb), 0.1);
+}
+
+/* Update form input styles */
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--background-secondary);
+    color: var(--text-primary);
+    font-size: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.2);
+}
+
+.form-input.error {
+    border-color: var(--error-color);
+}
+
+.form-input:disabled {
+    background: var(--background-tertiary);
+    cursor: not-allowed;
+}
+
+/* Update form group styles */
+.form-group {
+    margin-bottom: 0;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Summary Modal Styles */
+.summary-section {
+    margin-bottom: 30px;
+}
+
+.summary-section h4 {
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.summary-item {
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.summary-value {
+    font-size: 16px;
+    color: var(--text-secondary);
+}
+
+.field-summary-item {
+    background: var(--background-tertiary);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.field-header {
+    margin-bottom: 12px;
+}
+
+.field-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.field-label {
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.field-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+}
+
+.field-value {
+    color: var(--text-secondary);
+    font-size: 14px;
+    padding: 8px 12px;
+    background: var(--background-secondary);
+    border-radius: 6px;
+    word-break: break-word;
+    margin-top: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.checkbox-label:hover {
+    color: var(--text-primary);
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Responsive adjustments for small screens */
+@media screen and (max-width: 480px) {
+    .field-header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .field-controls {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+/* Template Slider Styles */
+.template-slider {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 100px 0px 0px;
+    position: relative;
+}
+
+.template-slider::-webkit-scrollbar {
+    height: 8px;
+}
+
+.template-slider::-webkit-scrollbar-track {
+    background: var(--background-tertiary);
+    border-radius: 4px;
+}
+
+.template-slider::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+.template-slider::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+.template-slider-content {
+    display: flex;
+    gap: 10px;
+    padding: 1%;
+    min-width: max-content;
+}
+
+.template-button {
+    flex: 0 0 300px;
+    background: var(--background-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.template-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.template-button.active {
+    border-color: var(--primary-color);
+    background: rgba(var(--primary-color-rgb), 0.1);
+    transform: scale(1.02);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.template-icon {
+    font-size: 24px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.template-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.template-description {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.template-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.template-actions button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.template-actions .preview-button {
+    background: var(--background-secondary);
+    color: var(--text-primary);
+}
+
+.template-actions .delete-button {
+    background: var(--error-color);
+    color: white;
+}
+
+.template-actions button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Update modal header */
+.preview-modal-content h3 {
+    color: var(--text-primary);
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Update close button */
+.preview-close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--background-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.preview-close-button:hover {
+    background: var(--background-secondary);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Update action buttons */
+.field-actions button {
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.field-actions .action-button {
+    background: var(--background-tertiary);
+    color: var(--text-primary);
+}
+
+.field-actions .submit-button {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.field-actions button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+

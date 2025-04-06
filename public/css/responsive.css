@@ -1,0 +1,39 @@
+@media screen and (min-width: 1431px) {
+    .container {
+        min-width: 960px;
+    }
+    .nav-button {
+        display: block;
+    }
+    button.action-button {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 1430px) {
+    .container { 
+        min-width: 635px;
+        padding: 0 10px;
+    }
+    .nav-button {
+        display: none;
+    }
+    button.action-button {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 0) and (max-width: 500px) {
+    .container { 
+        min-width: 320px;
+    }
+    .nav-button {
+        display: none;
+    }
+    button.action-button {
+        display: none;
+    }
+    .preview-modal-content {
+        width: 310px;
+    }
+}
